@@ -2,11 +2,11 @@
 
 [![NPM version](https://img.shields.io/npm/v/taobao-parser.svg?style=flat)](https://npmjs.com/package/taobao-parser) [![NPM downloads](https://img.shields.io/npm/dm/taobao-parser.svg?style=flat)](https://npmjs.com/package/taobao-parser)
 
-[request](https://github.com/request/request)/[cheerio](https://github.com/cheeriojs/cheerio)/[node-vm](https://nodejs.org/dist/latest-v7.x/docs/api/vm.html)
-
 > get items&#39; json data  in taobao search page without parser html dom, using node vm sandbox
 
 > project template [egoist/template-nm](https://github.com/egoist/template-nm)
+
+[request](https://github.com/request/request)/[cheerio](https://github.com/cheeriojs/cheerio)/[node-vm](https://nodejs.org/dist/latest-v7.x/docs/api/vm.html)
 
 ## Install
 
