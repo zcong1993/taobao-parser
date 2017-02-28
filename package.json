@@ -1,0 +1,37 @@
+{
+  "name": "taobao-parser",
+  "version": "0.0.0",
+  "description": "get items&#39; json data  in taobao search page without parser html dom, using node vm sandbox",
+  "repository": {
+    "url": "zcong1993/taobao-parser",
+    "type": "git"
+  },
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "test": "jest && npm run lint",
+    "lint": "xo"
+  },
+  "author": "zcong1993 <1005997919@qq.com>",
+  "license": "MIT",
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "devDependencies": {
+    "jest-cli": "^18.1.0",
+    "xo": "^0.17.1"
+  },
+  "xo": {
+    "space": 2,
+    "semicolon": false,
+    "envs": [
+      "jest"
+    ]
+  },
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "request": "^2.79.0"
+  }
+}
