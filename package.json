@@ -1,6 +1,6 @@
 {
   "name": "taobao-parser",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "get items&#39; json data  in taobao search page without parser html dom, using node vm sandbox",
   "repository": {
     "url": "zcong1993/taobao-parser",
