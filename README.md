@@ -2,7 +2,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/taobao-parser.svg?style=flat)](https://npmjs.com/package/taobao-parser) [![NPM downloads](https://img.shields.io/npm/dm/taobao-parser.svg?style=flat)](https://npmjs.com/package/taobao-parser)
 
-> get items&#39; json data  in taobao search page without parser html dom, using node vm sandbox
+> get items json data  in taobao search page without parser html dom, using node vm sandbox
 
 > project template [egoist/template-nm](https://github.com/egoist/template-nm)
 
@@ -24,6 +24,7 @@ taobaoParser(url)
     console.log(data)
     //=> items data here
   })
+  .catch(e => console.log(e.message))
 // run example.js
 $ node example.js
 ```

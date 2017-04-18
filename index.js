@@ -1,40 +1,27 @@
 const vm = require('vm')
-const request = require('request')
+const axios = require('axios')
 const cheerio = require('cheerio')
 
-const sandbox = {}
-
-function getData(uri) {
-  return new Promise((resolve, reject) => {
-    request(uri, (err, res, body) => {
-      if (err) {
-        throw err
-      }
-      // console.log(body)
-      const $ = cheerio.load(body, {
-        ignoreWhitespace: true,
-        xmlMode: true
-      })
-
-      let fin = $('script').filter((i, el) => {
-        return $(el)
-      }).map((i, el) => {
-        return $(el).text()
-      }).get()
-      // get json data in script
-      fin = fin[6]
-      // console.log(fin)
-      // disable function call
-      const script = new vm.Script(fin.replace(/([a-zA-Z_]+\(\))/, '//$1'))
-      script.runInNewContext(sandbox)
-      let items = sandbox.g_page_config.mods.itemlist.data.auctions
-      if (items) {
-        resolve(items)
-      } else {
-        reject(new Error('error'))
-      }
-    })
-  })
+function crawler(url) {
+  return axios.get(url)
+    .then(res => cheerio.load(res.data, {
+      ignoreWhitespace: true,
+      xmlMode: true
+    }))
 }
 
-module.exports = getData
+module.exports = url => {
+  return crawler(url)
+    .then($ => {
+      return $('script')
+        .filter((_, el) => /g_page_config/.test($(el).text()))
+        .text()
+        .replace(/([a-zA-Z_]+\(\))/, '//$1')
+    })
+    .then(rawData => {
+      const sandbox = {}
+      const script = new vm.Script(rawData)
+      script.runInNewContext(sandbox)
+      return sandbox.g_page_config.mods.itemlist.data.auctions
+    })
+}
