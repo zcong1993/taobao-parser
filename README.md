@@ -4,14 +4,12 @@
 
 > get items json data  in taobao search page without parser html dom, using node vm sandbox
 
-> project template [egoist/template-nm](https://github.com/egoist/template-nm)
-
-[request](https://github.com/request/request)/[cheerio](https://github.com/cheeriojs/cheerio)/[node-vm](https://nodejs.org/dist/latest-v7.x/docs/api/vm.html)
+[axios](https://github.com/mzabriskie/axios)/[cheerio](https://github.com/cheeriojs/cheerio)/[node-vm](https://nodejs.org/dist/latest-v7.x/docs/api/vm.html)
 
 ## Install
 
 ```bash
-yarn add taobao-parser
+$ yarn add taobao-parser
 ```
 
 ## Usage
@@ -19,6 +17,7 @@ yarn add taobao-parser
 ```js
 const taobaoParser = require('taobao-parser')
 
+// return a promise
 taobaoParser(url)
   .then(data => {
     console.log(data)
