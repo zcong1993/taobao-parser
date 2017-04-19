@@ -29,6 +29,10 @@ taobaoParser(url)
 $ node example.js
 ```
 
+## Test
+
+Run `npm run test:local` yourself, cause circleci has network error with `taobao.com`.
+
 ## Contributing
 
 1. Fork it!
