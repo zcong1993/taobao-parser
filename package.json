@@ -12,6 +12,7 @@
   ],
   "scripts": {
     "test": "jest && npm run lint",
+    "test:local": "cross-env TEST_ENV=local jest && npm run lint",
     "lint": "xo"
   },
   "author": "zcong1993 <1005997919@qq.com>",
@@ -20,6 +21,7 @@
     "testEnvironment": "node"
   },
   "devDependencies": {
+    "cross-env": "^4.0.0",
     "jest-cli": "^18.1.0",
     "xo": "^0.17.1"
   },
